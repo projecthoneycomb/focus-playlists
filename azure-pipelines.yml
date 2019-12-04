@@ -24,7 +24,7 @@ stages:
       displayName: 'Install focus-tools'
     - script: mkdir tracks
       displayName: 'Make tracks folder'
-    - script: manifest-to-files --i="./manifest.json" --o="./tracks"
+    - script: npx manifest-to-files --i="./manifest.json" --o="./tracks"
       displayName: 'Resolve manifest'
     - task: Docker@2
       inputs:
