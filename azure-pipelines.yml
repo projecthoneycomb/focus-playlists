@@ -24,7 +24,7 @@ stages:
       inputs:
         command: 'custom'
         customCommand: 'install @projecthoneycomb/focus-tools --save-dev'
-    - script: mkdir tracks
+    - script: mkdir ./lofi/tracks
       displayName: 'Make tracks folder'
     - script: npx manifest-to-files --i="./lofi/manifest.json" --o="./lofi/tracks"
       displayName: 'Resolve manifest'
