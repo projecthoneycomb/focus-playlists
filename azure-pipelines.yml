@@ -26,4 +26,6 @@ stages:
         repository: 'stream-lofi'
         command: 'buildAndPush'
         Dockerfile: '**/lofi/Dockerfile'
-        tags: '$(Build.BuildId)'
+        tags: |
+          - '$(Build.BuildId)'
+          - 'latest'
