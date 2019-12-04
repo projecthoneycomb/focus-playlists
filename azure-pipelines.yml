@@ -26,7 +26,7 @@ stages:
         customCommand: 'install @projecthoneycomb/focus-tools --save-dev'
     - script: mkdir tracks
       displayName: 'Make tracks folder'
-    - script: npx manifest-to-files --i="./manifest.json" --o="./tracks"
+    - script: npx manifest-to-files --i="./lofi/manifest.json" --o="./lofi/tracks"
       displayName: 'Resolve manifest'
     - task: Docker@2
       inputs:
