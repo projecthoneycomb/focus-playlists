@@ -20,6 +20,14 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
+    - task: Npm@1
+      inputs:
+        command: 'custom'
+        customCommand: 'install @projecthoneycomb/focus-tools -g'
+    - script: mkdir tracks
+      displayName: 'Make tracks folder'
+    - script: manifest-to-files --i="./manifest.json" --o="./tracks"
+      displayName: 'Resolve manifest'
     - task: Docker@2
       inputs:
         containerRegistry: 'Focus Mode Registry'
