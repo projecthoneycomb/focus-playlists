@@ -20,8 +20,10 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    - script: sudo /usr/local/bin/npm install @projecthoneycomb/focus-tools -g
-      displayName: 'Install focus-tools'
+    - task: Npm@1
+      inputs:
+        command: 'custom'
+        customCommand: 'install @projecthoneycomb/focus-tools --save-dev'
     - script: mkdir tracks
       displayName: 'Make tracks folder'
     - script: npx manifest-to-files --i="./manifest.json" --o="./tracks"
