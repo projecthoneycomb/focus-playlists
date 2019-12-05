@@ -54,7 +54,7 @@ spec:
         - name: RTMP_INGEST_PORT
           value: "1935"
         name: focus-stream-lofi
-        image: focusmodeimages.azurecr.io/stream-lofi:76
+        image: focusmodeimages.azurecr.io/stream-lofi:latest
         volumeMounts:
         - mountPath: /app
           name: lofi-claim0
@@ -92,7 +92,7 @@ spec:
         - name: RTMP_INGEST_PORT
           value: "1935"
         name: focus-stream-lofi
-        image: focusmodeimages.azurecr.io/stream-electronic:81
+        image: focusmodeimages.azurecr.io/stream-electronic:latest
         volumeMounts:
         - mountPath: /app
           name: electronic-claim0
