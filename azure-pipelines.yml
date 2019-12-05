@@ -44,19 +44,9 @@ stages:
     - task: AzureCLI@2
       inputs:
         azureSubscription: 'Honeycomb Main (ef492f20-94bd-47a4-83d2-01e200c463a6)'
-        scriptType: 'batch'
+        scriptType: bash
         scriptLocation: 'inlineScript'
         inlineScript: 'az storage blob upload-batch -s $(Agent.TempDirectory)/cache/ --account-name focustrackcache -d cache --destination-path lofi'
-
-    - task: AzureFileCopy@3
-      inputs:
-        SourcePath: '$(Agent.TempDirectory)/tracks.zip'
-        azureSubscription: 'Honeycomb Main (ef492f20-94bd-47a4-83d2-01e200c463a6)'
-        Destination: 'AzureBlob'
-        storage: 'focustrackcache'
-        ContainerName: 'cache'
-        BlobPrefix: 'lofi'
-
     - task: Docker@2
       inputs:
         containerRegistry: 'Focus Mode Registry'
@@ -94,7 +84,7 @@ stages:
     - task: AzureCLI@2
       inputs:
         azureSubscription: 'Honeycomb Main (ef492f20-94bd-47a4-83d2-01e200c463a6)'
-        scriptType: 'batch'
+        scriptType: bash
         scriptLocation: 'inlineScript'
         inlineScript: 'az storage blob upload-batch -s $(Agent.TempDirectory)/cache/ --account-name focustrackcache -d cache --destination-path electronic'
     - task: Docker@2
