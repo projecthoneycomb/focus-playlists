@@ -56,7 +56,6 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '**/lofi/Dockerfile'
         tags: |
-          $(Build.BuildId)
           latest
   - job: Build_electronic
     displayName: Build Electronic
