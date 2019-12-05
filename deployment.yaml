@@ -1,0 +1,105 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: lofi-claim0
+  name: lofi-claim0
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+status: {}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: electronic-claim0
+  name: electronic-claim0
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: focus-stream-lofi
+  labels:
+    app: focus-stream-lofi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: focus-stream-lofi
+  template:
+    metadata:
+      labels:
+        app: focus-stream-lofi
+    spec:
+      containers:
+      - args:
+        - node
+        - index.js
+        env:
+        - name: RTMP_INGEST_HOST
+          value: "focus-mux"
+        - name: RTMP_INGEST_PORT
+          value: "1935"
+        name: focus-stream-lofi
+        image: focusmodeimages.azurecr.io/stream-lofi:76
+        volumeMounts:
+        - mountPath: /app
+          name: lofi-claim0
+      restartPolicy: Always
+      volumes:
+        - name: lofi-claim0
+          persistentVolumeClaim:
+            claimName: lofi-claim0
+      imagePullSecrets:
+        - name: regcred
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: focus-stream-electronic
+  labels:
+    app: focus-stream-electronic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: focus-stream-electronic
+  template:
+    metadata:
+      labels:
+        app: focus-stream-electronic
+    spec:
+      containers:
+      - args:
+        - node
+        - index.js
+        env:
+        - name: RTMP_INGEST_HOST
+          value: "focus-mux"
+        - name: RTMP_INGEST_PORT
+          value: "1935"
+        name: focus-stream-lofi
+        image: focusmodeimages.azurecr.io/stream-electronic:81
+        volumeMounts:
+        - mountPath: /app
+          name: electronic-claim0
+      restartPolicy: Always
+      volumes:
+        - name: electronic-claim0
+          persistentVolumeClaim:
+            claimName: electronic-claim0
+      imagePullSecrets:
+        - name: regcred
