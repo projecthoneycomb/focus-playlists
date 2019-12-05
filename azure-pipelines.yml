@@ -26,8 +26,32 @@ stages:
         customCommand: 'install @projecthoneycomb/focus-tools --save-dev'
     - script: mkdir ./lofi/tracks
       displayName: 'Make tracks folder'
+    - script: curl https://focustrackcache.blob.core.windows.net/cache/lofi/tracks.zip --output $(Agent.TempDirectory)/cache.zip
+      displayName: Download cache
+    - task: ExtractFiles@1
+      inputs:
+        archiveFilePatterns: '$(Agent.TempDirectory)/cache.zip'
+        destinationFolder: './lofi/tracks'
+        cleanDestinationFolder: true
+
     - script: npx manifest-to-files --i="./lofi/manifest.json" --o="./lofi/tracks"
       displayName: 'Resolve manifest'
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: './lofi/tracks'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Agent.TempDirectory)/cache.zip'
+        replaceExistingArchive: true
+    - task: AzureFileCopy@3
+      inputs:
+        SourcePath: '$(Agent.TempDirectory)/cache.zip'
+        azureSubscription: 'Honeycomb Main (ef492f20-94bd-47a4-83d2-01e200c463a6)'
+        Destination: 'AzureBlob'
+        storage: 'focustrackcache'
+        ContainerName: 'cache'
+        BlobPrefix: 'lofi'
+
     - task: Docker@2
       inputs:
         containerRegistry: 'Focus Mode Registry'
@@ -48,8 +72,30 @@ stages:
         customCommand: 'install @projecthoneycomb/focus-tools --save-dev'
     - script: mkdir ./electronic/tracks
       displayName: 'Make electronic folder'
+    - script: curl https://focustrackcache.blob.core.windows.net/cache/electronic/tracks.zip --output $(Agent.TempDirectory)/cache.zip
+      displayName: Download cache
+    - task: ExtractFiles@1
+      inputs:
+        archiveFilePatterns: '$(Agent.TempDirectory)/cache.zip'
+        destinationFolder: './electronic/tracks'
+        cleanDestinationFolder: true
     - script: npx manifest-to-files --i="./electronic/manifest.json" --o="./electronic/tracks"
       displayName: 'Resolve manifest'
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: './electronic/tracks'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Agent.TempDirectory)/cache.zip'
+        replaceExistingArchive: true
+    - task: AzureFileCopy@3
+      inputs:
+        SourcePath: '$(Agent.TempDirectory)/cache.zip'
+        azureSubscription: 'Honeycomb Main (ef492f20-94bd-47a4-83d2-01e200c463a6)'
+        Destination: 'AzureBlob'
+        storage: 'focustrackcache'
+        ContainerName: 'cache'
+        BlobPrefix: 'electronic'
     - task: Docker@2
       inputs:
         containerRegistry: 'Focus Mode Registry'
