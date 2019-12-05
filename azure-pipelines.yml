@@ -24,15 +24,13 @@ stages:
       inputs:
         command: 'custom'
         customCommand: 'install @projecthoneycomb/focus-tools --save-dev'
-    - script: mkdir ./lofi/tracks
-      displayName: 'Make tracks folder'
-    - script: curl https://focustrackcache.blob.core.windows.net/cache/lofi/tracks.zip --output $(Agent.TempDirectory)/cache.zip
+    - script: curl https://focustrackcache.blob.core.windows.net/cache/lofi/tracks.zip --output $(Agent.TempDirectory)/tracks.zip
       displayName: Download cache
     - task: ExtractFiles@1
       inputs:
-        archiveFilePatterns: '$(Agent.TempDirectory)/cache.zip'
-        destinationFolder: './lofi/tracks'
-        cleanDestinationFolder: true
+        archiveFilePatterns: '$(Agent.TempDirectory)/tracks.zip'
+        destinationFolder: './lofi/'
+        cleanDestinationFolder: false
 
     - script: npx manifest-to-files --i="./lofi/manifest.json" --o="./lofi/tracks"
       displayName: 'Resolve manifest'
@@ -41,11 +39,18 @@ stages:
         rootFolderOrFile: './lofi/tracks'
         includeRootFolder: false
         archiveType: 'zip'
-        archiveFile: '$(Agent.TempDirectory)/cache.zip'
+        archiveFile: '$(Agent.TempDirectory)/cache/tracks.zip'
         replaceExistingArchive: true
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: 'Honeycomb Main (ef492f20-94bd-47a4-83d2-01e200c463a6)'
+        scriptType: 'batch'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'az storage blob upload-batch -s $(Agent.TempDirectory)/cache/ --account-name focustrackcache -d cache --destination-path lofi'
+
     - task: AzureFileCopy@3
       inputs:
-        SourcePath: '$(Agent.TempDirectory)/cache.zip'
+        SourcePath: '$(Agent.TempDirectory)/tracks.zip'
         azureSubscription: 'Honeycomb Main (ef492f20-94bd-47a4-83d2-01e200c463a6)'
         Destination: 'AzureBlob'
         storage: 'focustrackcache'
@@ -70,15 +75,13 @@ stages:
       inputs:
         command: 'custom'
         customCommand: 'install @projecthoneycomb/focus-tools --save-dev'
-    - script: mkdir ./electronic/tracks
-      displayName: 'Make electronic folder'
-    - script: curl https://focustrackcache.blob.core.windows.net/cache/electronic/tracks.zip --output $(Agent.TempDirectory)/cache.zip
+    - script: curl https://focustrackcache.blob.core.windows.net/cache/electronic/tracks.zip --output $(Agent.TempDirectory)/tracks.zip
       displayName: Download cache
     - task: ExtractFiles@1
       inputs:
-        archiveFilePatterns: '$(Agent.TempDirectory)/cache.zip'
-        destinationFolder: './electronic/tracks'
-        cleanDestinationFolder: true
+        archiveFilePatterns: '$(Agent.TempDirectory)/tracks.zip'
+        destinationFolder: './electronic/'
+        cleanDestinationFolder: false
     - script: npx manifest-to-files --i="./electronic/manifest.json" --o="./electronic/tracks"
       displayName: 'Resolve manifest'
     - task: ArchiveFiles@2
@@ -86,16 +89,14 @@ stages:
         rootFolderOrFile: './electronic/tracks'
         includeRootFolder: false
         archiveType: 'zip'
-        archiveFile: '$(Agent.TempDirectory)/cache.zip'
+        archiveFile: '$(Agent.TempDirectory)/cache/tracks.zip'
         replaceExistingArchive: true
-    - task: AzureFileCopy@3
+    - task: AzureCLI@2
       inputs:
-        SourcePath: '$(Agent.TempDirectory)/cache.zip'
         azureSubscription: 'Honeycomb Main (ef492f20-94bd-47a4-83d2-01e200c463a6)'
-        Destination: 'AzureBlob'
-        storage: 'focustrackcache'
-        ContainerName: 'cache'
-        BlobPrefix: 'electronic'
+        scriptType: 'batch'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'az storage blob upload-batch -s $(Agent.TempDirectory)/cache/ --account-name focustrackcache -d cache --destination-path electronic'
     - task: Docker@2
       inputs:
         containerRegistry: 'Focus Mode Registry'
