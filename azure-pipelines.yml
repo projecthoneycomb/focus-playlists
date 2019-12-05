@@ -15,8 +15,8 @@ stages:
 - stage: Build
   displayName: Build image
   jobs:  
-  - job: Build
-    displayName: Build
+  - job: Build_lofi
+    displayName: Build Lofi
     pool:
       vmImage: 'ubuntu-latest'
     steps:
@@ -34,6 +34,28 @@ stages:
         repository: 'stream-lofi'
         command: 'buildAndPush'
         Dockerfile: '**/lofi/Dockerfile'
+        tags: |
+          $(Build.BuildId)
+          latest
+  - job: Build_electronic
+    displayName: Build Electronic
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Npm@1
+      inputs:
+        command: 'custom'
+        customCommand: 'install @projecthoneycomb/focus-tools --save-dev'
+    - script: mkdir ./electronic/tracks
+      displayName: 'Make electronic folder'
+    - script: npx manifest-to-files --i="./electronic/manifest.json" --o="./electronic/tracks"
+      displayName: 'Resolve manifest'
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'Focus Mode Registry'
+        repository: 'stream-electronic'
+        command: 'buildAndPush'
+        Dockerfile: '**/electronic/Dockerfile'
         tags: |
           $(Build.BuildId)
           latest
