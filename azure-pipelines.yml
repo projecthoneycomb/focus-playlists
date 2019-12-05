@@ -26,10 +26,12 @@ stages:
         customCommand: 'install @projecthoneycomb/focus-tools --save-dev'
     - script: curl https://focustrackcache.blob.core.windows.net/cache/lofi/tracks.zip --output $(Agent.TempDirectory)/tracks.zip
       displayName: Download cache
+    - script: mkdir tracks
+      displayName: Make ./tracks
     - task: ExtractFiles@1
       inputs:
         archiveFilePatterns: '$(Agent.TempDirectory)/tracks.zip'
-        destinationFolder: './lofi/'
+        destinationFolder: './lofi/tracks'
         cleanDestinationFolder: false
 
     - script: npx manifest-to-files --i="./lofi/manifest.json" --o="./lofi/tracks"
@@ -67,10 +69,12 @@ stages:
         customCommand: 'install @projecthoneycomb/focus-tools --save-dev'
     - script: curl https://focustrackcache.blob.core.windows.net/cache/electronic/tracks.zip --output $(Agent.TempDirectory)/tracks.zip
       displayName: Download cache
+    - script: mkdir tracks
+      displayName: Make ./tracks
     - task: ExtractFiles@1
       inputs:
         archiveFilePatterns: '$(Agent.TempDirectory)/tracks.zip'
-        destinationFolder: './electronic/'
+        destinationFolder: './electronic/tracks'
         cleanDestinationFolder: false
     - script: npx manifest-to-files --i="./electronic/manifest.json" --o="./electronic/tracks"
       displayName: 'Resolve manifest'
