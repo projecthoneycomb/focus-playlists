@@ -98,5 +98,4 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '**/electronic/Dockerfile'
         tags: |
-          $(Build.BuildId)
           latest
