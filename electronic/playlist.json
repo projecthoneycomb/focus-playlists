@@ -1,0 +1,456 @@
+{
+  "name": "electronic",
+  "type": "scrape",
+  "tracks": [
+    {
+      "searchTerm": "Mini Culcha (Beautiful Swimmers Remix) Mo Kolours"
+    },
+    {
+      "searchTerm": "Babe Evenings"
+    },
+    {
+      "searchTerm": "Looped Kiasmos"
+    },
+    {
+      "searchTerm": "Spice Melange Natureboy Flako"
+    },
+    {
+      "searchTerm": "Inf Inf Inf Inf Clark"
+    },
+    {
+      "searchTerm": "Return Deadboy"
+    },
+    {
+      "searchTerm": "Hunger Tropics"
+    },
+    {
+      "searchTerm": "Destiny (feat. Sia & Sophie Barker) Zero 7"
+    },
+    {
+      "searchTerm": "Gold Chet Faker"
+    },
+    {
+      "searchTerm": "Carbonated Mount Kimbie"
+    },
+    {
+      "searchTerm": "Un vingt Throwing Snow"
+    },
+    {
+      "searchTerm": "Apogee Tycho"
+    },
+    {
+      "searchTerm": "Sleep Sound Jamie xx"
+    },
+    {
+      "searchTerm": "The Force (feat. QNC) Aim"
+    },
+    {
+      "searchTerm": "Oil Fields Monopoly"
+    },
+    {
+      "searchTerm": "Part of the World (Instrumental) Heralds of Change, Mike Slott & Hudson Mohawke"
+    },
+    {
+      "searchTerm": "You Wish Nightmares On Wax"
+    },
+    {
+      "searchTerm": "Instant Need FKJ"
+    },
+    {
+      "searchTerm": "Nothing's Real Shura"
+    },
+    {
+      "searchTerm": "Holdin On Flume"
+    },
+    {
+      "searchTerm": "Inhale Exhale Nao"
+    },
+    {
+      "searchTerm": "Angel Echoes Four Tet"
+    },
+    {
+      "searchTerm": "Push Pull Purity Ring"
+    },
+    {
+      "searchTerm": "About Time (feat. Boxed In) George FitzGerald"
+    },
+    {
+      "searchTerm": "Melt Leftfield"
+    },
+    {
+      "searchTerm": "Mirror Maru Cashmere Cat"
+    },
+    {
+      "searchTerm": "Pretty Girls Little Dragon"
+    },
+    {
+      "searchTerm": "The Wheel SOHN"
+    },
+    {
+      "searchTerm": "I Ain't Gonna Be the First To Cry Bob Moses"
+    },
+    {
+      "searchTerm": "Cirrus Bonobo"
+    },
+    {
+      "searchTerm": "Pizza Guy Touch Sensitive"
+    },
+    {
+      "searchTerm": "Jaded Lone"
+    },
+    {
+      "searchTerm": "Glassbeadgames Martyn & Four Tet"
+    },
+    {
+      "searchTerm": "Juggalo Gigolos Juj"
+    },
+    {
+      "searchTerm": "Colomb Nicolas Jaar"
+    },
+    {
+      "searchTerm": "Osea (feat. Koreless) SBTRKT"
+    },
+    {
+      "searchTerm": "Köln Harmonic 313"
+    },
+    {
+      "searchTerm": "Pe Vale (Prima Parte) Hubert Daviz"
+    },
+    {
+      "searchTerm": "Massage Situation Flying Lotus"
+    },
+    {
+      "searchTerm": "Veto Lukid"
+    },
+    {
+      "searchTerm": "Ikopol Dauwd"
+    },
+    {
+      "searchTerm": "Center Your Love Machinedrum"
+    },
+    {
+      "searchTerm": "Places Shlohmo"
+    },
+    {
+      "searchTerm": "4D Koreless"
+    },
+    {
+      "searchTerm": "So So Lovely Shigeto"
+    },
+    {
+      "searchTerm": "Another Girl Jacques Greene"
+    },
+    {
+      "searchTerm": "See Me Feel Me Sepalcure"
+    },
+    {
+      "searchTerm": "Aquarium Nosaj Thing"
+    },
+    {
+      "searchTerm": "Awe (Phaeleh Remix) Roger Goula"
+    },
+    {
+      "searchTerm": "Myrtle Avenue Floating Points"
+    },
+    {
+      "searchTerm": "Free Kidswaste"
+    },
+    {
+      "searchTerm": "Get You the Moon (feat. Snøw) Kina"
+    },
+    {
+      "searchTerm": "Glass House Utah & Adam"
+    },
+    {
+      "searchTerm": "Ligne 3 Låpsley"
+    },
+    {
+      "searchTerm": "I'll Keep You Safe (feat. Shiloh Dynasty) sagun"
+    },
+    {
+      "searchTerm": "Thin Aquilo"
+    },
+    {
+      "searchTerm": "Same Old Felivand"
+    },
+    {
+      "searchTerm": "Water Flow Klyne"
+    },
+    {
+      "searchTerm": "Better With You Michl"
+    },
+    {
+      "searchTerm": "Almost Everybody Harry Edwards"
+    },
+    {
+      "searchTerm": "Ready Yet Sasha Sloan"
+    },
+    {
+      "searchTerm": "Throwaway SG Lewis & Clairo"
+    },
+    {
+      "searchTerm": "Electric (feat. Khalid) Alina Baraz"
+    },
+    {
+      "searchTerm": "Cherry Blossom Stumbleine"
+    },
+    {
+      "searchTerm": "I Wish Tom Misch"
+    },
+    {
+      "searchTerm": "Still Miss You Sinead Harnett"
+    },
+    {
+      "searchTerm": "Playing for You (feat. Bassette) Joe Hertz"
+    },
+    {
+      "searchTerm": "Making Sense Lil Silva"
+    },
+    {
+      "searchTerm": "Warm Water Banks"
+    },
+    {
+      "searchTerm": "Line of Sight (feat. WYNNE & Mansionair) ODESZA"
+    },
+    {
+      "searchTerm": "better off (filous remix) Jeremy Zucker & Chelsea Cutler"
+    },
+    {
+      "searchTerm": "Going Nowhere (feat. Flores) Maths Time Joy"
+    },
+    {
+      "searchTerm": "Rarri Amilli"
+    },
+    {
+      "searchTerm": "Lost TENDER"
+    },
+    {
+      "searchTerm": "Love Is Hazey Eyes"
+    },
+    {
+      "searchTerm": "Miss You James Hersey"
+    },
+    {
+      "searchTerm": "I'm Tied, To You (edit) Two People"
+    },
+    {
+      "searchTerm": "No Pressure Mahalia"
+    },
+    {
+      "searchTerm": "London breathe."
+    },
+    {
+      "searchTerm": "Goodbye Kisses (feat. Pip Millett) Joe Hertz"
+    },
+    {
+      "searchTerm": "Go Back Home FKJ"
+    },
+    {
+      "searchTerm": "Swimming Pool Millie Turner"
+    },
+    {
+      "searchTerm": "Heights (Extended Mix) Shallou"
+    },
+    {
+      "searchTerm": "bitches broken hearts Billie Eilish"
+    },
+    {
+      "searchTerm": "Lost Your Mind (feat. Fhin) Zimmer"
+    },
+    {
+      "searchTerm": "My Love Was Like the Rain Låpsley"
+    },
+    {
+      "searchTerm": "Run Vallis Alps"
+    },
+    {
+      "searchTerm": "Hidden Shelters Lovelier Other"
+    },
+    {
+      "searchTerm": "Unbound Cathedrals"
+    },
+    {
+      "searchTerm": "Bullets on a Screen Chinatown Slalom"
+    },
+    {
+      "searchTerm": "Bring You Back Beacon"
+    },
+    {
+      "searchTerm": "Territory The Blaze"
+    },
+    {
+      "searchTerm": "The Drwg Sälen"
+    },
+    {
+      "searchTerm": "Work Charlotte Day Wilson"
+    },
+    {
+      "searchTerm": "take you home slenderbodies"
+    },
+    {
+      "searchTerm": "Black Mambo Glass Animals"
+    },
+    {
+      "searchTerm": "surface sagun"
+    },
+    {
+      "searchTerm": "Home Snoh Aalegra"
+    },
+    {
+      "searchTerm": "Feel Me (Single Version) Aeris Roves"
+    },
+    {
+      "searchTerm": "Vapor Trails (feat. Soul Food Horns) ZOD1AC"
+    },
+    {
+      "searchTerm": "Learn to Let Go IDER"
+    },
+    {
+      "searchTerm": "Floating (feat. Khalid) Alina Baraz"
+    },
+    {
+      "searchTerm": "Kerosene Joesef"
+    },
+    {
+      "searchTerm": "Down in Flames Ella Vos"
+    },
+    {
+      "searchTerm": "Underwaterfall Bearcubs"
+    },
+    {
+      "searchTerm": "February 3rd Jorja Smith"
+    },
+    {
+      "searchTerm": "george Arlo Parks"
+    },
+    {
+      "searchTerm": "Day 1 ◑ HONNE"
+    },
+    {
+      "searchTerm": "So I Know You Care Toulouse"
+    },
+    {
+      "searchTerm": "Cruel Jessie Ware"
+    },
+    {
+      "searchTerm": "The Way Things Change Yellow Days"
+    },
+    {
+      "searchTerm": "Music Is the Answer (feat. SLO) Joe Goddard"
+    },
+    {
+      "searchTerm": "Down Marian Hill"
+    },
+    {
+      "searchTerm": "Girl Jamie xx"
+    },
+    {
+      "searchTerm": "Close but Not Quite (feat. Sampha) Everything Is Recorded"
+    },
+    {
+      "searchTerm": "Say My Name Tesla Boy"
+    },
+    {
+      "searchTerm": "Nothing but You (feat. Donnie Sloan & Ricky Ducati) Devault"
+    },
+    {
+      "searchTerm": "Aurelia Tom Tripp"
+    },
+    {
+      "searchTerm": "Morning View (feat. SZA) Towkio"
+    },
+    {
+      "searchTerm": "Last of a Kind Neighbors"
+    },
+    {
+      "searchTerm": "Bags Clairo"
+    },
+    {
+      "searchTerm": "Lately Wet"
+    },
+    {
+      "searchTerm": "Square One Moss Kena"
+    },
+    {
+      "searchTerm": "Blood & Guts Leo Bhanji"
+    },
+    {
+      "searchTerm": "He Jai Paul"
+    },
+    {
+      "searchTerm": "A Closeness Dermot Kennedy"
+    },
+    {
+      "searchTerm": "I Dare You The xx"
+    },
+    {
+      "searchTerm": "Winter's Song Bob Moses"
+    },
+    {
+      "searchTerm": "First Time Elderbrook"
+    },
+    {
+      "searchTerm": "Both Sides of the Moon (Live) Celeste & Gotts Street Park"
+    },
+    {
+      "searchTerm": "Surprise Yourself Jack Garratt"
+    },
+    {
+      "searchTerm": "Alone Model Man"
+    },
+    {
+      "searchTerm": "Heavey (Front Room Edit) Mom Tudie"
+    },
+    {
+      "searchTerm": "Monochrome AMA"
+    },
+    {
+      "searchTerm": "Linked Bonobo"
+    },
+    {
+      "searchTerm": "House In LA Jungle"
+    },
+    {
+      "searchTerm": "no control (Joe Hertz remix) Anais"
+    },
+    {
+      "searchTerm": "Paracosm Washed Out"
+    },
+    {
+      "searchTerm": "Winterbreak MUNA"
+    },
+    {
+      "searchTerm": "What You Heard Sonder"
+    },
+    {
+      "searchTerm": "Paracosm Washed Out"
+    },
+    {
+      "searchTerm": "In the Morning Nao"
+    },
+    {
+      "searchTerm": "Rain in Cuba (feat. Blue Lab Beats) Joe Hertz, Barney Artist & Sam Wills"
+    },
+    {
+      "searchTerm": "passionfruit Yaeji"
+    },
+    {
+      "searchTerm": "Dreamboat Joviale"
+    },
+    {
+      "searchTerm": "Morning Tremor Affelaye"
+    },
+    {
+      "searchTerm": "I Don't Feel Like Me Talulah Ruby"
+    },
+    {
+      "searchTerm": "Hinode Fakear"
+    },
+    {
+      "searchTerm": "Sunday Morning Cereal Alfie Templeman"
+    },
+    {
+      "searchTerm": "Aurora (feat. José González) Zero 7"
+    }
+  ]
+}
